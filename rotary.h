@@ -14,6 +14,7 @@
 #define	SIGNAL_PIN			PIND 
 #define SIGNAL_A			PD7
 #define SIGNAL_B			PD6
+#define SW					PD4
 
 #define F_CPU		8000000
 
@@ -21,7 +22,8 @@
 #define TIMER_COMPARE	124
 
 volatile char status;
-volatile char cnt;
+volatile short cnt;
+volatile char button;
 
 void rotary_init();
 
