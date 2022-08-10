@@ -33,6 +33,17 @@ void rotary_init()
 	
 }
 
+
+short rotary_change()
+{
+	static short last = 0;
+	short temp = cnt - last;
+	
+	last = cnt;
+	return temp;	
+}
+
+
 ISR (TIMER1_COMPA_vect)											//executing every 1ms
 {	
 	status = status << 2;										//shift to make place for new status

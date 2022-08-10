@@ -26,5 +26,6 @@ volatile short cnt;
 volatile char button;
 
 void rotary_init();
+short rotary_change();				//returns cnt change since last call
 
 #endif /* ROTARY_H_ */
