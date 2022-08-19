@@ -28,8 +28,13 @@ int main(void)
 		lcd_home();
 		lcd_string(itoa(status,buffer,2));
 		lcd_setcursor(0,2);
-		lcd_string(itoa(cnt,buffer,10));
-		_delay_ms(1000);
+		lcd_string(itoa(rotary_getCount(),buffer,10));
+		lcd_setcursor(5,2);
+		lcd_string(itoa(rotary_getChange(),buffer,10));
+		lcd_setcursor(8,2);
+		lcd_string(itoa(rotary_getButton(),buffer,10));
+		_delay_ms(500);
+		
 		
     }
 }

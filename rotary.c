@@ -7,8 +7,7 @@
  */ 
 
 #include "rotary.h"
-#include <avr/io.h>
-#include <avr/interrupt.h>
+
 
 
 
@@ -34,14 +33,27 @@ void rotary_init()
 }
 
 
-short rotary_change()
+int8_t rotary_getCount()
 {
-	static short last = 0;
-	short temp = cnt - last;
+	return cnt;
+}
+
+
+
+int8_t rotary_getChange()
+{
+	static int8_t last = 0;
+	int8_t temp = cnt - last;
 	
 	last = cnt;
 	return temp;	
 }
+
+bool rotary_getButton()
+{
+	return button;
+}
+
 
 
 ISR (TIMER1_COMPA_vect)											//executing every 1ms
